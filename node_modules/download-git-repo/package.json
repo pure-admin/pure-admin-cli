@@ -1,0 +1,41 @@
+{
+  "name": "download-git-repo",
+  "version": "3.0.2",
+  "license": "MIT",
+  "repository": "gitlab:flippidippi/download-git-repo",
+  "description": "Download and extract a git repository (GitHub, GitLab, Bitbucket) from node.",
+  "keywords": [
+    "download",
+    "github",
+    "gitlab",
+    "bitbucket",
+    "repo",
+    "repository",
+    "tar",
+    "extract",
+    "tarball"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "lint": "standard --verbose | snazzy",
+    "lint:fix": "standard --verbose --fix | snazzy",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "download": "^7.1.0",
+    "git-clone": "^0.1.0",
+    "rimraf": "^3.0.0"
+  },
+  "devDependencies": {
+    "fs-readdir-recursive": "^1.1.0",
+    "husky": "^3.0.8",
+    "mocha": "^6.2.1",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.1"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  }
+}
