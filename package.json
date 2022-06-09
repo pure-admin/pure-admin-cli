@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["pure-thin-cli", "pure-admin-thin", "vue-pure-admin"],
+  "keywords": [
+    "pure-thin-cli",
+    "pure-admin-thin",
+    "vue-pure-admin"
+  ],
   "author": "Ten-K",
   "license": "MIT",
   "bin": {
