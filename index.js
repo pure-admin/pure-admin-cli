@@ -22,6 +22,10 @@ const templates = {
 	tauri: {
 		downloadUrl: 'http://gitee.com:yiming_chang/tauri-pure-admin#main',
 		description: 'vue-pure-admin精简版的tauri模板'
+	},
+	admin: {
+		downloadUrl: 'http://gitee.com:yiming_chang/vue-pure-admin#main',
+		description: 'vue-pure-admin完整版'
 	}
 }
 
@@ -48,6 +52,9 @@ program
 			)
 			console.log(`\r\n cd ${chalk.cyan(projectName)}`)
 			console.log('pnpm install \r\n')
+			if (templateName === 'tauri') {
+				return console.log('pnpm tauri:dev \r\n')
+			}
 			console.log('pnpm dev \r\n')
 		})
 	})

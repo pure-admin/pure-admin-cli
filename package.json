@@ -1,6 +1,6 @@
 {
   "name": "pure-thin-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "vue-pure-admin脚手架",
   "main": "index.js",
   "scripts": {
