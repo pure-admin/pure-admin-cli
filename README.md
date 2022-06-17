@@ -14,6 +14,7 @@
 ### 使用说明
 
 1. npm i pure-thin-cli -g
-2. pure init 模板类型 项目名称
+2. pure init 模板类型 项目名称 或 pure create 项目名称（通过交互式界面创建）
+3. --force 强制覆盖同名项目名称文件夹(选填)
 
-> 例如：pure init thin myproject
+> 例如：pure init thin myproject (--force) 或 pure create myproject (--force)
