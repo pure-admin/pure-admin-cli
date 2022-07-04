@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const chalk = require('chalk')
+const figlet = require('figlet')
 const program = require('commander')
 const { templates } = require('../src/utils/index')
 const version = require('../package.json').version
@@ -27,6 +28,16 @@ program
   })
 
 program.on('--help', function () {
+  console.log(
+    '\r\n' +
+      figlet.textSync('pure', {
+        font: '3D-ASCII',
+        horizontalLayout: 'default',
+        verticalLayout: 'default',
+        width: 80,
+        whitespaceBreak: true
+      })
+  )
   console.log()
   console.log(`Run ${chalk.cyan('pure <command> --help')} for detailed usage of given command.`)
   console.log()

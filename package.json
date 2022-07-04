@@ -12,15 +12,28 @@
     "pure-admin-thin",
     "vue-pure-admin"
   ],
-  "author": "Ten-K",
+  "author": {
+    "name": "Ten-K",
+    "email": "742798240@qq.com"
+  },
   "license": "MIT",
   "bin": {
     "pure": "bin/www.js"
   },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ten-K/pure-thin-cli.git"
+  },
+  "homepage": "https://github.com/Ten-K/pure-thin-cli#readme",
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^9.3.0",
     "download-git-repo": "^3.0.2",
+    "figlet": "^1.5.2",
     "fs-extra": "^10.1.0",
     "inquirer": "^8.2.4",
     "log-symbols": "^4.1.0",
