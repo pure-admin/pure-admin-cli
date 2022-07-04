@@ -4,7 +4,8 @@
   "description": "vue-pure-admin脚手架",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "keywords": [
     "pure-thin-cli",
@@ -24,5 +25,10 @@
     "inquirer": "^8.2.4",
     "log-symbols": "^4.1.0",
     "ora": "^5.1.0"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "prettier": "2.7.1",
+    "pretty-quick": "^3.1.3"
   }
 }
