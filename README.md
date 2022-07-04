@@ -1,20 +1,25 @@
 # pure-thin-cli
 
-- 用于快速搭建基于 pure-admin-thin 项目的命令行工具
+![GitHub license](https://img.shields.io/github/license/Ten-K/pure-thin-cli)
+[![OSCS Status](https://www.oscs1024.com/platform/badge/Ten-K/pure-thin-cli.svg?size=small)](https://www.oscs1024.com/project/Ten-K/pure-thin-cli?ref=badge_small)
 
-## 模板类型
+**中文** | [English](./README.en-US.md)
 
-- thin（[vue-pure-admin 的精简版](https://github.com/xiaoxian521/pure-admin-thin)）
-- no-i18n（[vue-pure-admin 精简版移除国际化](https://github.com/xiaoxian521/pure-admin-thin/tree/delete-i18n)）
+- 用于快速搭建基于 `vue-pure-admin` 项目的命令行工具
+
+## :house: 模板类型
+
+- `thin`（[vue-pure-admin 的精简版](https://github.com/xiaoxian521/pure-admin-thin)）
+- `no-i18n`（[vue-pure-admin 精简版移除国际化](https://github.com/xiaoxian521/pure-admin-thin/tree/delete-i18n)）
   **注意：** _no-i18n 版本只同步到 vue-pure-admin 的精简版的 v3.1.0_
-- tauri（[vue-pure-admin 精简版的 tauri 模板](https://github.com/xiaoxian521/tauri-pure-admin)）
+- `tauri`（[vue-pure-admin 的 tauri 模板](https://github.com/xiaoxian521/tauri-pure-admin)）
   **注意：** _tauri 版本只同步到 vue-pure-admin 的精简版的 v3.2.0_
-- admin（[vue-pure-admin 完整版](https://github.com/xiaoxian521/vue-pure-admin)）
+- `admin`（[vue-pure-admin 完整版](https://github.com/xiaoxian521/vue-pure-admin)）
 
-### 使用说明
+### :red_car: 使用说明
 
 1. npm i pure-thin-cli -g
-2. pure init 模板类型 项目名称 或 pure create 项目名称（通过交互式界面创建）
-3. --force 强制覆盖同名项目名称文件夹(选填)
+2. pure init `模板类型` `项目名称` 或 pure create `项目名称`（通过交互式界面选择模板类型）
+3. `--force` 强制覆盖同名项目名称文件夹(选填)
 
-> 例如：pure init thin myproject (--force) 或 pure create myproject (--force)
+> 示例：`pure init thin myproject (--force)` 或 `pure create myproject (--force)`
