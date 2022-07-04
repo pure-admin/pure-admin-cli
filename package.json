@@ -40,6 +40,8 @@
     "ora": "^5.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "husky": "^8.0.0",
     "prettier": "2.7.1",
     "pretty-quick": "^3.1.3"
