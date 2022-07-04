@@ -11,15 +11,27 @@
 
 - `thin`（[pure-admin-thin](https://github.com/xiaoxian521/pure-admin-thin)）
 - `no-i18n`（[pure-admin-thin removes internationalization](https://github.com/xiaoxian521/pure-admin-thin/tree/delete-i18n)）
-  **注意：** _`no-i18n` only synchronizes to pure-admin-thin v3.1.0_
+
 - `tauri`（[tauri-pure-admin](https://github.com/xiaoxian521/tauri-pure-admin)）
-  **注意：** _`tauri` only synchronizes to vue-pure-admin v3.2.0_
 - `admin`（[vue-pure-admin](https://github.com/xiaoxian521/vue-pure-admin)）
 
-### :red_car: Instructions
+### :red_car: Usage
 
 1. npm i pure-thin-cli -g
 2. pure init `template` `name` 或 pure create `name`（select template type through interactive interface）
-3. `--force` Compulsory coverage of the project name folder (selected)
+3. `--force` compulsory coverage of the project name folder (selected)
 
-> 示例：`pure init thin myproject (--force)` or `pure create myproject (--force)`
+```js
+  pure init thin myproject (--force)
+```
+
+Or, you want to create a project through interactive selection template：
+
+```js
+  pure create myproject (--force)
+```
+
+### :warning: warning
+
+- `no-i18n` only synchronizes to `pure-admin-thin v3.1.0`
+- `tauri` only synchronizes to `pure-admin-thin v3.2.0`
