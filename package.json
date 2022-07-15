@@ -39,13 +39,13 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^9.3.0",
-    "download-git-repo": "^3.0.2",
     "figlet": "^1.5.2",
     "fs-extra": "^10.1.0",
     "inquirer": "^8.2.4",
     "log-symbols": "^4.1.0",
     "ora": "^5.1.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "simple-git": "^3.10.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",

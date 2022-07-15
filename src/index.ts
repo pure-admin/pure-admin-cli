@@ -50,7 +50,7 @@ program.on('--help', function () {
 
 program
   .command('list')
-  .description('查看所有可用模板')
+  .description('view all available templates')
   .action(() => {
     Object.keys(templates).forEach((key: string) => {
       console.log(`${key} ${templates[key as TTemplateName].description}`)
