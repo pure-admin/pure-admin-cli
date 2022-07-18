@@ -1,16 +1,19 @@
-import ora from 'ora'
+import ora, { Ora, Options } from 'ora'
 import chalk from 'chalk'
 import logSymbols from 'log-symbols'
 import { TTemplateName } from '../types'
 import simpleGit, { SimpleGit, SimpleGitOptions, SimpleGitProgressEvent } from 'simple-git'
 
-const spiner = ora()
+const oraOptions: Options = {
+  spinner: 'runner'
+}
+const spinner: Ora = ora(oraOptions)
 
 const progress = ({ progress }: SimpleGitProgressEvent) => {
   const proText = `Progress: ${chalk.green(progress + '%')}`
-  spiner.start().text = proText
+  spinner.start().text = proText
   if (progress === 100) {
-    spiner.start().text = proText + chalk.green(' Download Completed')
+    spinner.start().text = proText + chalk.green(' Download Completed')
   }
 }
 
@@ -32,11 +35,11 @@ export const clone = async (
   try {
     await git.clone(repo, projectName, options)
   } catch (err) {
-    spiner.fail()
+    spinner.fail()
     console.log(logSymbols.error, chalk.red('Request fail, Please try again'))
   }
 
-  spiner.succeed() // 下载成功提示
+  spinner.succeed() // 下载成功提示
   // 模板使用提示
   console.log(`\r\n Successfully created project ${chalk.cyan(projectName)}`)
   console.log(`\r\n cd ${chalk.cyan(projectName)}`)
