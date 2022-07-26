@@ -38,13 +38,13 @@
   },
   "homepage": "https://github.com/Ten-K/pure-thin-cli#readme",
   "dependencies": {
-    "chalk": "^4.1.2",
     "commander": "^9.3.0",
     "figlet": "^1.5.2",
     "fs-extra": "^10.1.0",
     "inquirer": "^8.2.4",
     "log-symbols": "^4.1.0",
     "ora": "^5.1.0",
+    "picocolors": "^1.0.0",
     "simple-git": "^3.10.0"
   },
   "devDependencies": {

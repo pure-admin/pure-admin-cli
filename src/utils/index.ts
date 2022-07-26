@@ -1,6 +1,6 @@
-import ora, { Ora, Options } from 'ora'
-import chalk from 'chalk'
+import pc from 'picocolors'
 import logSymbols from 'log-symbols'
+import ora, { Ora, Options } from 'ora'
 import { TTemplateName } from '../types'
 import simpleGit, { SimpleGit, SimpleGitOptions, SimpleGitProgressEvent } from 'simple-git'
 
@@ -9,11 +9,11 @@ const oraOptions: Options = {
 }
 const spinner: Ora = ora(oraOptions)
 
-const progress = ({ progress }: SimpleGitProgressEvent) => {
-  const proText = `Progress: ${chalk.green(progress + '%')}`
+const progress = ({ method, stage, progress }: SimpleGitProgressEvent) => {
+  const proText = `git.${method} ${stage} stage ${pc.cyan(progress + '%')} complete`
   spinner.start().text = proText
   if (progress === 100) {
-    spinner.start().text = proText + chalk.green(' Download Completed')
+    spinner.start().text = proText + pc.green(' Download Completed')
   }
 }
 
@@ -33,19 +33,20 @@ export const clone = async (
 ): Promise<any> => {
   const git: SimpleGit = simpleGit(gitOptions)
   try {
+    console.log(`download from ${pc.cyan(repo)}`)
     await git.clone(repo, projectName, options)
   } catch (err) {
     spinner.fail()
-    console.log(logSymbols.error, chalk.red('Request fail, Please try again'))
+    console.log(logSymbols.error, pc.red('Request fail, Please try again'))
   }
 
   spinner.succeed() // 下载成功提示
   // 模板使用提示
-  console.log(`\r\n Successfully created project ${chalk.cyan(projectName)}`)
-  console.log(`\r\n cd ${chalk.cyan(projectName)}`)
-  console.log('pnpm install \r\n')
+  console.log(`\r\n Successfully created project ${pc.cyan(projectName)}`)
+  console.log(`\r\n cd ${pc.cyan(projectName)}`)
+  console.log(' pnpm install \r\n')
   if (templateName === 'tauri') {
-    return console.log('pnpm tauri:dev \r\n')
+    return console.log(' pnpm tauri:dev \r\n')
   }
-  console.log('pnpm dev \r\n')
+  console.log(' pnpm dev \r\n')
 }

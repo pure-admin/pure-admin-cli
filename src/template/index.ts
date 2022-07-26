@@ -1,5 +1,5 @@
-import { templates } from '../constants'
 import { clone } from '../utils/index'
+import { templates } from '../constants'
 import { TTemplateName } from '../types'
 import { chooseTemplate } from '../prompt'
 

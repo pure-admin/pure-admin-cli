@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import pc from 'picocolors'
 import figlet from 'figlet'
 import { program } from 'commander'
 import { create } from './template'
@@ -44,7 +44,7 @@ program.on('--help', function () {
       })
   )
   console.log()
-  console.log(`Run ${chalk.cyan('pure <command> --help')} for detailed usage of given command.`)
+  console.log(`Run ${pc.cyan('pure <command> --help')} for detailed usage of given command.`)
   console.log()
 })
 
