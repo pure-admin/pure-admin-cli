@@ -2,7 +2,7 @@
   "name": "pure-thin-cli",
   "version": "0.0.6",
   "description": "vue-pure-admin脚手架",
-  "main": "dist/index.js",
+  "main": "bin/www.js",
   "scripts": {
     "dev": "pnpm build && pure init thin demo",
     "build": "tsup",

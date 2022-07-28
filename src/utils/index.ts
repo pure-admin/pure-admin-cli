@@ -9,8 +9,8 @@ const oraOptions: Options = {
 }
 const spinner: Ora = ora(oraOptions)
 
-const progress = ({ method, stage, progress }: SimpleGitProgressEvent) => {
-  const proText = `git.${method} ${stage} stage ${pc.cyan(progress + '%')} complete`
+const progress = ({ progress }: SimpleGitProgressEvent) => {
+  const proText = `Progress: ${pc.cyan(progress + '%')}`
   spinner.start().text = proText
   if (progress === 100) {
     spinner.start().text = proText + pc.green(' Download Completed')
