@@ -7,6 +7,7 @@
 **中文** | [English](./README.en-US.md)
 
 - 用于快速搭建基于 `vue-pure-admin` 项目的命令行工具
+  ![演示](https://cdn.jsdelivr.net/gh/Ten-K/picgo/img/demo.gif)
 
 ## 🏠 模板类型
 
