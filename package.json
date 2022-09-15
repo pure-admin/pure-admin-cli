@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/Ten-K/pure-thin-cli#readme",
   "dependencies": {
-    "commander": "^9.4.0",
+    "cac": "^6.7.14",
     "figlet": "^1.5.2",
     "fs-extra": "^10.1.0",
     "inquirer": "^8.2.4",

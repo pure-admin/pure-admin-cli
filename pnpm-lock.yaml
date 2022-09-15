@@ -11,7 +11,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.37.0
   '@vue/eslint-config-prettier': ^7.0.0
   '@vue/eslint-config-typescript': ^11.0.1
-  commander: ^9.4.0
+  cac: ^6.7.14
   eslint: ^8.23.1
   eslint-plugin-prettier: ^4.2.1
   eslint-plugin-vue: ^9.4.0
@@ -30,7 +30,7 @@ specifiers:
   typescript: ^4.8.3
 
 dependencies:
-  commander: 9.4.0
+  cac: 6.7.14
   figlet: 1.5.2
   fs-extra: 10.1.0
   inquirer: 8.2.4
@@ -771,7 +771,6 @@ packages:
   /cac/6.7.14:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
     engines: {node: '>=8'}
-    dev: true
 
   /callsites/3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
@@ -916,6 +915,7 @@ packages:
   /commander/9.4.0:
     resolution: {integrity: sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw==}
     engines: {node: ^12.20.0 || >=14}
+    dev: true
 
   /compare-func/2.0.0:
     resolution: {integrity: sha512-zHig5N+tPWARooBnb0Zx1MFcdfpyJrfTJ3Y5L+IFvUm8rM74hHz66z0gw0x4tijh5CorKkKUCnW82R2vmpeCRA==}
