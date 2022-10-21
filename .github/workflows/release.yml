@@ -24,14 +24,3 @@ jobs:
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
-          
-     - name: Install Dependencies
-        run: pnpm i
-
-      - name: PNPM build
-        run: pnpm run build
-
-      - name: Publish to NPM
-        run: pnpm -r publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
