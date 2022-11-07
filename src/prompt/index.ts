@@ -12,7 +12,7 @@ export const chooseTemplate = async () => {
           checked: true
         },
         {
-          name: 'no-i18n'
+          name: 'i18n'
         },
         {
           name: 'tauri'

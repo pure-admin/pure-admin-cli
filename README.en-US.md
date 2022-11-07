@@ -12,7 +12,7 @@
 ## 🏠 Template
 
 - `thin`（[pure-admin-thin](https://github.com/xiaoxian521/pure-admin-thin)）
-- `no-i18n`（[pure-admin-thin removes internationalization](https://github.com/xiaoxian521/pure-admin-thin/tree/delete-i18n)）
+- `i18n`（[pure-admin-thin internationalization](https://github.com/xiaoxian521/pure-admin-thin/tree/i18n)）
 
 - `tauri`（[tauri-pure-admin](https://github.com/xiaoxian521/tauri-pure-admin)）
 - `admin`（[vue-pure-admin](https://github.com/xiaoxian521/vue-pure-admin)）
@@ -39,5 +39,4 @@
 
 ## ⚠️ Warning
 
-- `no-i18n` only synchronizes to `pure-admin-thin v3.1.0`
 - `tauri` only synchronizes to `pure-admin-thin v3.2.0`

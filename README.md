@@ -12,7 +12,7 @@
 ## 🏠 模板类型
 
 - `thin`（[vue-pure-admin 的精简版](https://github.com/xiaoxian521/pure-admin-thin)）
-- `no-i18n`（[vue-pure-admin 精简版移除国际化](https://github.com/xiaoxian521/pure-admin-thin/tree/delete-i18n)）
+- `i18n`（[vue-pure-admin 精简版国际化](https://github.com/xiaoxian521/pure-admin-thin/tree/i18n)）
 - `tauri`（[vue-pure-admin 的 tauri 模板](https://github.com/xiaoxian521/tauri-pure-admin)）
 - `admin`（[vue-pure-admin 完整版](https://github.com/xiaoxian521/vue-pure-admin)）
 
@@ -38,5 +38,4 @@
 
 ## ⚠️ 注意
 
-- `no-i18n` 只同步到 `pure-admin-thin v3.1.0`
 - `tauri` 只同步到 `pure-admin-thin v3.2.0`

@@ -4,10 +4,10 @@ export const templates = {
     description: 'vue-pure-admin精简版', // 模板描述
     branch: 'main' // 分支
   },
-  'no-i18n': {
+  i18n: {
     downloadUrl: 'https://gitee.com/yiming_chang/pure-admin-thin.git',
     description: 'vue-pure-admin精简版移除国际化',
-    branch: 'delete-i18n'
+    branch: 'i18n'
   },
   tauri: {
     downloadUrl: 'https://gitee.com/yiming_chang/tauri-pure-admin.git',

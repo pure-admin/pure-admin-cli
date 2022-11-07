@@ -9,9 +9,9 @@ interface ITemplatesItem {
 
 export interface ITemplates {
   thin: ITemplatesItem
-  'no-i18n': ITemplatesItem
+  i18n: ITemplatesItem
   tauri: ITemplatesItem
   admin: ITemplatesItem
 }
 
-export type TTemplateName = 'thin' | 'no-i18n' | 'tauri' | 'admin'
+export type TTemplateName = 'thin' | 'i18n' | 'tauri' | 'admin'
