@@ -29,6 +29,17 @@ export const chooseTemplate = async () => {
   return template
 }
 
+export const inputProjectName = async () => {
+  const { projectName } = await inquirer.prompt([
+    {
+      name: 'projectName',
+      type: 'input',
+      message: '请输入项目名称'
+    }
+  ])
+  return projectName
+}
+
 export const isOverwriteDir = async () => {
   const { isOverwrite } = await inquirer.prompt([
     // 返回值为promise

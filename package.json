@@ -5,6 +5,7 @@
   "main": "bin/www.js",
   "scripts": {
     "dev": "pnpm build && pure init thin demo",
+    "devc": "pnpm build && pure init aa demo",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts}\" --fix",

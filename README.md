@@ -34,5 +34,5 @@
 - 或者，你想通过交互式选择模板创建项目：
 
 ```bash
-  pure create myproject
+  pure create
 ```

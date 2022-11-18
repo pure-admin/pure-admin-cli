@@ -5,6 +5,8 @@ import { create } from './template'
 import { templates } from './constants'
 import { TTemplateName } from './types'
 import { isExistsFile } from './create-dir'
+import { hasTemplate, clg } from './utils'
+import { inputProjectName } from './prompt'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const version: string = require('../package.json').version
@@ -13,25 +15,27 @@ const cli = cac('pure')
 cli.version(version)
 
 cli
-  .command('create <project-name>', 'create a new project') // 增加创建指令
-  .option('-f, --force', 'overwrite target directory if it exists') // 强制覆盖
-  .action(async (projectName, cmd) => {
+  .command('create', '创建一个新项目') // 增加创建指令
+  .option('-f, --force', '如果目标文件存在，则强制覆盖') // 强制覆盖
+  .action(async (cmd) => {
+    const projectName = await inputProjectName()
     const isExists = await isExistsFile(projectName, cmd)
     if (isExists) return
     create(projectName)
   })
 
 cli
-  .command('init <template-name> <project-name>', 'create a new project') // 增加创建指令
-  .option('-f, --force', 'overwrite target directory if it exists') // 强制覆盖
+  .command('init <template-name> <project-name>', '创建一个新项目') // 增加创建指令
+  .option('-f, --force', '如果目标文件存在，则强制覆盖') // 强制覆盖
   .action(async (templateName, projectName, cmd) => {
+    if (!hasTemplate(templateName)) return
     const isExists = await isExistsFile(projectName, cmd)
     if (isExists) return
     create(projectName, templateName)
   })
 
 cli.help(() => {
-  console.log(
+  clg(
     '\r\n' +
       figlet.textSync('pure', {
         font: '3D-ASCII',
@@ -41,14 +45,12 @@ cli.help(() => {
         whitespaceBreak: true
       })
   )
-  console.log()
-  console.log(`Run ${pc.cyan('pure <command> --help')} for detailed usage of given command.`)
-  console.log()
+  clg(`运行 ${pc.cyan('pure <command> --help')} 查看有关命令的详细用法. \r\n`)
 })
 
-cli.command('list', 'view all available templates').action(() => {
+cli.command('list', '查看所有模板类型').action(() => {
   Object.keys(templates).forEach((key: string) => {
-    console.log(`${key} ${templates[key as TTemplateName].description}`)
+    clg(`${key} ${templates[key as TTemplateName].description}`)
   })
 })
 

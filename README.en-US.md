@@ -34,5 +34,5 @@
 - Or, you want to create a project through interactive selection template：
 
 ```bash
-  pure create myproject
+  pure create
 ```
