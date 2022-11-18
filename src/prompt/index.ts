@@ -5,7 +5,7 @@ export const chooseTemplate = async () => {
     {
       name: 'template',
       type: 'list',
-      message: 'Please choose a template',
+      message: '请选择模板类型',
       choices: [
         {
           name: 'thin',
@@ -16,6 +16,9 @@ export const chooseTemplate = async () => {
         },
         {
           name: 'tauri'
+        },
+        {
+          name: 'electron'
         },
         {
           name: 'admin'
@@ -32,10 +35,10 @@ export const isOverwriteDir = async () => {
     {
       name: 'isOverwrite', // 与返回值对应
       type: 'list', // list 类型
-      message: 'Target directory exists, Please choose an action',
+      message: '目标文件已存在, 请选择一个操作',
       choices: [
-        { name: 'Overwrite', value: true },
-        { name: 'Cancel', value: false }
+        { name: '覆盖', value: true },
+        { name: '取消', value: false }
       ]
     }
   ])

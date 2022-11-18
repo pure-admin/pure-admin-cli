@@ -13,8 +13,8 @@
 
 - `thin`（[pure-admin-thin](https://github.com/xiaoxian521/pure-admin-thin)）
 - `i18n`（[pure-admin-thin internationalization](https://github.com/xiaoxian521/pure-admin-thin/tree/i18n)）
-
 - `tauri`（[tauri-pure-admin](https://github.com/xiaoxian521/tauri-pure-admin)）
+- `electron`（[electron-pure-admin](https://gitee.com/yiming_chang/electron-pure-admin)）
 - `admin`（[vue-pure-admin](https://github.com/xiaoxian521/vue-pure-admin)）
 
 ## 📦 Install
@@ -36,7 +36,3 @@
 ```bash
   pure create myproject
 ```
-
-## ⚠️ Warning
-
-- `tauri` only synchronizes to `pure-admin-thin v3.2.0`
