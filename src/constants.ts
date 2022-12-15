@@ -1,3 +1,10 @@
+export const REGISTER = {
+  npm: 'https://registry.npmjs.org/',
+  taobao: 'https://registry.npmmirror.com/'
+}
+
+export { name, version } from '../package.json'
+
 export const templates = {
   thin: {
     downloadUrl: 'https://gitee.com/yiming_chang/pure-admin-thin.git', // 模板下载地址

@@ -5,9 +5,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "outDir": "../dist",
     "module": "commonjs",
-    "lib": ["esnext"]
+    "lib": ["esnext"],
+    "skipLibCheck": true
   },
   "include": ["."]
 }

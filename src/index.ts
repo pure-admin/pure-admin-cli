@@ -2,14 +2,11 @@ import { cac } from 'cac'
 import pc from 'picocolors'
 import figlet from 'figlet'
 import { create } from './template'
-import { templates } from './constants'
 import { TTemplateName } from './types'
-import { isExistsFile } from './create-dir'
 import { hasTemplate, clg } from './utils'
+import { isExistsFile } from './create-dir'
 import { inputProjectName } from './prompt'
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const version: string = require('../package.json').version
+import { templates, version } from './constants'
 
 const cli = cac('pure')
 cli.version(version)
@@ -31,7 +28,7 @@ cli
     if (!hasTemplate(templateName)) return
     const isExists = await isExistsFile(projectName, cmd)
     if (isExists) return
-    create(projectName, templateName)
+    await create(projectName, templateName)
   })
 
 cli.help(() => {

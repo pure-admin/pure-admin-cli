@@ -43,8 +43,9 @@ export const clone = async (
 
   spinner.succeed() // 下载成功提示
   // 模板使用提示
-  clg(`\r\n 已成功创建项目 ${pc.cyan(projectName)}`)
-  clg(`\r\n cd ${pc.cyan(projectName)}`)
+  clg(`\r\n 🎉 已成功创建项目 ${pc.cyan(projectName)}`)
+  clg(` 👉 开始使用以下命令: \r\n`)
+  clg(` cd ${pc.cyan(projectName)}`)
   clg(' pnpm install \r\n')
   if (templateName === 'tauri') {
     return clg(' pnpm tauri:dev \r\n')

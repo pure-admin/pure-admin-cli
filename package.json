@@ -5,7 +5,7 @@
   "main": "bin/www.js",
   "scripts": {
     "dev": "pnpm build && pure init thin demo",
-    "devc": "pnpm build && pure init aa demo",
+    "devc": "pnpm build && pure create",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts}\" --fix",
@@ -39,6 +39,7 @@
   },
   "homepage": "https://github.com/Ten-K/pure-thin-cli#readme",
   "dependencies": {
+    "axios": "^1.2.1",
     "cac": "^6.7.14",
     "figlet": "^1.5.2",
     "fs-extra": "^10.1.0",
@@ -46,6 +47,7 @@
     "log-symbols": "^4.1.0",
     "ora": "^5.4.1",
     "picocolors": "^1.0.0",
+    "semver": "^7.3.8",
     "simple-git": "^3.14.1"
   },
   "devDependencies": {
