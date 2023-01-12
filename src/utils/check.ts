@@ -31,19 +31,14 @@ export const getNpmInfo = async (npmName: string, register = getDefaultRegister(
 }
 
 /**
- * 获取npm包所有版本号
+ * 获取npm包最新版本号
  * @param npmName 当前npm包名
  * @param register npm提供的api地址
  * @returns
  */
-export const getNpmVersions = async (npmName: string, register = getDefaultRegister()) => {
+export const getNpmLatestVersion = async (npmName: string, register = getDefaultRegister()) => {
   const { data } = (await getNpmInfo(npmName, register)) as AxiosResponse
-  if (!data) return []
-  const versions = Object.keys(data.versions)
-  const a = versions.sort((a, b) => {
-    return semver.gt(a, b) ? -1 : 1
-  })
-  return a
+  return data['dist-tags'].latest
 }
 
 /**
@@ -52,9 +47,8 @@ export const getNpmVersions = async (npmName: string, register = getDefaultRegis
  * @param npmName 当前npm包名
  */
 export const checkNpmVersion = async (currentVersion: string, npmName: string) => {
-  const versions = await getNpmVersions(npmName)
-  const latestVersion = versions[0]
-  if (!latestVersion || currentVersion === latestVersion) return
+  const latestVersion = await getNpmLatestVersion(npmName)
+  if (semver.lt(latestVersion, currentVersion)) return
   const dim = pc.dim
   const magenta = pc.magenta
   console.log(
