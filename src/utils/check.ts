@@ -48,7 +48,7 @@ export const getNpmLatestVersion = async (npmName: string, register = getDefault
  */
 export const checkNpmVersion = async (currentVersion: string, npmName: string) => {
   const latestVersion = await getNpmLatestVersion(npmName)
-  if (semver.lt(latestVersion, currentVersion)) return
+  if (semver.lt(latestVersion, currentVersion) || latestVersion === currentVersion) return
   const dim = pc.dim
   const magenta = pc.magenta
   console.log(
