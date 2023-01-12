@@ -6,8 +6,8 @@ import { templates, version, name as npmName } from '../constants'
 export const create = async (projectName: string, templateName?: TTemplateName) => {
   const run = async (name: TTemplateName) => {
     const { downloadUrl, branch } = templates[name]
-    checkNpmVersion(version, npmName)
     await clone(downloadUrl, projectName, ['-b', `${branch}`], name)
+    await checkNpmVersion(version, npmName)
   }
   if (templateName) {
     run(templateName)
