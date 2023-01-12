@@ -3,6 +3,9 @@
   "version": "0.1.4",
   "description": "vue-pure-admin脚手架",
   "main": "bin/www.js",
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
   "packageManager": "pnpm@7.22.0",
   "scripts": {
     "dev": "pnpm build && pure init thin demo",
