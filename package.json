@@ -47,6 +47,7 @@
     "log-symbols": "^4.1.0",
     "ora": "^5.4.1",
     "picocolors": "^1.0.0",
+    "progress-estimator": "^0.3.0",
     "semver": "^7.3.8",
     "simple-git": "^3.15.1"
   },

@@ -3,26 +3,27 @@ import pc from 'picocolors'
 import ora, { Ora, Options } from 'ora'
 import { TTemplateName } from '../types'
 import { templates } from '../constants'
-import simpleGit, { SimpleGit, SimpleGitOptions, SimpleGitProgressEvent } from 'simple-git'
+import simpleGit, { SimpleGit, SimpleGitOptions } from 'simple-git'
+import createLogger from 'progress-estimator'
+
+// https://github.com/bvaughn/progress-estimator
+// https://github.com/sindresorhus/cli-spinners/blob/main/spinners.json
+const logger = createLogger({
+  spinner: {
+    interval: 140,
+    frames: ['🚶 ', '🏃 ']
+  }
+})
 
 const oraOptions: Options = {
   spinner: 'runner'
 }
 const spinner: Ora = ora(oraOptions)
 
-const progress = ({ progress }: SimpleGitProgressEvent) => {
-  const proText = `进度: ${pc.cyan(progress + '%')}`
-  spinner.start().text = proText
-  if (progress === 100) {
-    spinner.start().text = proText + pc.green(' 下载完成')
-  }
-}
-
 const gitOptions: Partial<SimpleGitOptions> = {
   baseDir: process.cwd(),
   binary: 'git',
-  maxConcurrentProcesses: 6,
-  progress
+  maxConcurrentProcesses: 6
 }
 
 // https://git-scm.com/docs/git-clone#Documentation/git-clone.txt
@@ -35,13 +36,14 @@ export const clone = async (
   const git: SimpleGit = simpleGit(gitOptions)
   try {
     clg(`项目下载自 ${pc.cyan(repo)}`)
-    await git.clone(repo, projectName, options)
+    await logger(git.clone(repo, projectName, options), '耗时: ', {
+      estimate: 7000
+    })
   } catch (err) {
     spinner.fail()
     log.err('请求失败, 请重试')
   }
 
-  spinner.succeed() // 下载成功提示
   // 模板使用提示
   clg(`\r\n 🎉 已成功创建项目 ${pc.cyan(projectName)}`)
   clg(` 👉 开始使用以下命令: \r\n`)
