@@ -14,7 +14,7 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-      
+
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
@@ -22,6 +22,6 @@ jobs:
           cache: pnpm
 
       - name: Publish NPM
-        run: pnpm run publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
