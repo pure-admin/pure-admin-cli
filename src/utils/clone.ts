@@ -36,7 +36,7 @@ export const clone = async (
   const git: SimpleGit = simpleGit(gitOptions)
   try {
     clg(`项目下载自 ${pc.cyan(repo)}`)
-    await logger(git.clone(repo, projectName, options), '耗时: ', {
+    await logger(git.clone(repo, projectName, options), '下载耗时: ', {
       estimate: 7000
     })
   } catch (err) {
