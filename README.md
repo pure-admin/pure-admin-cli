@@ -7,7 +7,7 @@
 **中文** | [English](./README.en-US.md)
 
 - 用于快速搭建基于 `vue-pure-admin` 项目的命令行工具
-  ![pure-cli.gif](https://cdn.jsdelivr.net/gh/Ten-K/picgo/img/pure-cli.gif)
+  ![pure-cli.gif](https://img.tucang.cc/api/image/show/3afbb00face536a88a562b12d6484246)
 
 ## 🏠 模板类型
 
