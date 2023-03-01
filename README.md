@@ -37,7 +37,7 @@
   pure create
 ```
 
-- 如果你不想安装到 `pure-thin-cli` 到本地，可以使用以下命令
+- 如果你不想安装 `pure-thin-cli` 到本地，可以使用以下命令
 
 ```bash
   npx pure-thin-cli create
