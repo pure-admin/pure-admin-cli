@@ -7,7 +7,7 @@
 **中文** | [English](./README.en-US.md)
 
 - 用于快速搭建基于 `vue-pure-admin` 项目的命令行工具
-  ![pure-cli.gif](https://img.tucang.cc/api/image/show/3afbb00face536a88a562b12d6484246)
+  ![pure-cli.gif](https://i.imgtg.com/2023/03/01/Vge2F.gif)
 
 ## 🏠 模板类型
 
@@ -35,4 +35,12 @@
 
 ```bash
   pure create
+```
+
+- 如果你不想安装到 `pure-thin-cli` 到本地，可以使用以下命令
+
+```bash
+  npx pure-thin-cli create
+  # 或者
+  npx pure-thin-cli init thin myproject
 ```

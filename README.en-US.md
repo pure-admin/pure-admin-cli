@@ -7,7 +7,7 @@
 **English** | [中文](./README.md)
 
 - Used to quickly build an command line tool based on the `vue-pure-admin` project
-  ![pure-cli.gif](https://img.tucang.cc/api/image/show/3afbb00face536a88a562b12d6484246)
+  ![pure-cli.gif](https://i.imgtg.com/2023/03/01/Vge2F.gif)
 
 ## 🏠 Template
 
@@ -35,4 +35,12 @@
 
 ```bash
   pure create
+```
+
+- If you don't want to install to `pure-thin-cli` locally, you can use the following command
+
+```bash
+  npx pure-thin-cli create
+  # 或者
+  npx pure-thin-cli init thin myproject
 ```
