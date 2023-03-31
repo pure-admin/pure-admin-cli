@@ -7,7 +7,7 @@
 **English** | [中文](./README.md)
 
 - Used to quickly build an command line tool based on the `vue-pure-admin` project
-  ![pure-cli.gif](https://i.imgtg.com/2023/03/01/Vge2F.gif)
+  ![pure-cli.gif](https://i.imgtg.com/2023/03/31/212UC.gif)
 
 ## 🏠 Template
 
