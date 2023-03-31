@@ -1,8 +1,10 @@
-import { log, clg } from './log'
+import boxen, { Options as boxenOptions } from 'boxen'
 import pc from 'picocolors'
-import ora, { Ora, Options } from 'ora'
+import { log, clg } from './log'
+import ora, { Ora, Options as oraOptions } from 'ora'
 import { TTemplateName } from '../types'
 import { templates } from '../constants'
+import gradientString from 'gradient-string'
 import simpleGit, { SimpleGit, SimpleGitOptions } from 'simple-git'
 import createLogger from 'progress-estimator'
 
@@ -15,7 +17,7 @@ const logger = createLogger({
   }
 })
 
-const oraOptions: Options = {
+const oraOptions: oraOptions = {
   spinner: 'runner'
 }
 const spinner: Ora = ora(oraOptions)
@@ -43,6 +45,17 @@ export const clone = async (
     spinner.fail()
     log.err('请求失败, 请重试')
   }
+
+  const welcomeMessage = gradientString('cyan', 'magenta').multiline(
+    'Hello! 欢迎使用PURE-ADMIN脚手架~ 🥰'
+  )
+  const boxenOprions: boxenOptions = {
+    padding: 1,
+    margin: 1,
+    borderColor: 'cyan',
+    borderStyle: 'round'
+  }
+  clg(boxen(welcomeMessage, boxenOprions))
 
   // 模板使用提示
   clg(`\r\n 🎉 已成功创建项目 ${pc.cyan(projectName)}`)

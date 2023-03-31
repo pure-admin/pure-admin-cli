@@ -1,6 +1,7 @@
+import boxen from 'boxen'
 import pc from 'picocolors'
 import semver from 'semver'
-import { log } from '../utils'
+import { log, clg } from '../utils'
 import { REGISTER } from '../constants'
 import axios, { AxiosResponse } from 'axios'
 
@@ -51,22 +52,21 @@ export const checkNpmVersion = async (currentVersion: string, npmName: string) =
   if (semver.lt(latestVersion, currentVersion) || latestVersion === currentVersion) return
   const dim = pc.dim
   const magenta = pc.magenta
-  console.log(
-    `\n
-                    😀 ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(
-      latestVersion
-    )}.
-    💯 ${
-      magenta('更新日志: ') +
-      dim(`https://github.com/Ten-K/${npmName}/releases/tag/v${latestVersion}`)
-    }
-    👻 ${dim('运行') + magenta(` npm i -g ${npmName} `) + dim('可以更新哦.')}
+  clg(
+    boxen(
+      `  😀 ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(latestVersion)}.
+  💯 ${
+    magenta('更新日志: ') +
+    dim(`https://github.com/Ten-K/${npmName}/releases/tag/v${latestVersion}`)
+  }
+  👻 ${dim('运行') + magenta(` npm i -g ${npmName} `) + dim('可以更新哦.')}
 
-    💕 ${
-      dim('关注') +
-      magenta(' pure-thin-cli') +
-      dim(`了解最新动态: https://github.com/Ten-K/${npmName}`)
-    }
-    \n`
+  💕 ${
+    dim('关注') +
+    magenta(' pure-thin-cli') +
+    dim(`了解最新动态: https://github.com/Ten-K/${npmName}`)
+  }`,
+      { padding: 1, margin: 1, borderColor: 'cyan', borderStyle: 'round' }
+    )
   )
 }
