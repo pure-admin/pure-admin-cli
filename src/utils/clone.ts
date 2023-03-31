@@ -1,12 +1,12 @@
-import boxen, { Options as boxenOptions } from 'boxen'
 import pc from 'picocolors'
 import { log, clg } from './log'
-import ora, { Ora, Options as oraOptions } from 'ora'
 import { TTemplateName } from '../types'
 import { templates } from '../constants'
 import gradientString from 'gradient-string'
-import simpleGit, { SimpleGit, SimpleGitOptions } from 'simple-git'
 import createLogger from 'progress-estimator'
+import ora, { Ora, Options as oraOptions } from 'ora'
+import boxen, { Options as boxenOptions } from 'boxen'
+import simpleGit, { SimpleGit, SimpleGitOptions } from 'simple-git'
 
 // https://github.com/bvaughn/progress-estimator
 // https://github.com/sindresorhus/cli-spinners/blob/main/spinners.json
