@@ -32,9 +32,10 @@ export const chooseTemplate = async () => {
 export const inputProjectName = async () => {
   const { projectName } = await inquirer.prompt([
     {
-      name: 'projectName',
       type: 'input',
-      message: '请输入项目名称'
+      name: 'projectName',
+      message: '请输入项目名称',
+      default: 'vue-pure-admin'
     }
   ])
   return projectName
@@ -54,4 +55,19 @@ export const isOverwriteDir = async () => {
     }
   ])
   return isOverwrite
+}
+
+export const chooseDownloadOrigin = async () => {
+  const { chooseDownloadOrigin } = await inquirer.prompt([
+    {
+      name: 'chooseDownloadOrigin',
+      type: 'list',
+      message: '你想从哪个仓库下载本项目（推荐Gitee）',
+      choices: [
+        { name: 'Gitee', value: false },
+        { name: 'Github', value: true }
+      ]
+    }
+  ])
+  return chooseDownloadOrigin
 }

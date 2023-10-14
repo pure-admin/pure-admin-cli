@@ -3,9 +3,14 @@ import { chooseTemplate } from '../prompt'
 import { clone, checkNpmVersion } from '../utils'
 import { templates, version, name as npmName } from '../constants'
 
-export const create = async (projectName: string, templateName?: TTemplateName) => {
+export const create = async (
+  projectName: string,
+  templateName?: TTemplateName,
+  isDownloadForGithub = false
+) => {
   const run = async (name: TTemplateName) => {
-    const { downloadUrl, branch } = templates[name]
+    const { giteeUrl, githubUrl, branch } = templates[name]
+    const downloadUrl = isDownloadForGithub ? githubUrl : giteeUrl
     await clone(downloadUrl, projectName, ['-b', `${branch}`], name)
     await checkNpmVersion(version, npmName)
   }

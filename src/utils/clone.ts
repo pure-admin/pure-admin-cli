@@ -4,7 +4,6 @@ import { TTemplateName } from '../types'
 import { templates } from '../constants'
 import gradientString from 'gradient-string'
 import createLogger from 'progress-estimator'
-import ora, { Ora, Options as oraOptions } from 'ora'
 import boxen, { Options as boxenOptions } from 'boxen'
 import simpleGit, { SimpleGit, SimpleGitOptions } from 'simple-git'
 
@@ -17,15 +16,13 @@ const logger = createLogger({
   }
 })
 
-const oraOptions: oraOptions = {
-  spinner: 'runner'
-}
-const spinner: Ora = ora(oraOptions)
-
 const gitOptions: Partial<SimpleGitOptions> = {
   baseDir: process.cwd(),
   binary: 'git',
-  maxConcurrentProcesses: 6
+  maxConcurrentProcesses: 6,
+  timeout: {
+    block: 60000
+  }
 }
 
 // https://git-scm.com/docs/git-clone#Documentation/git-clone.txt
@@ -38,12 +35,13 @@ export const clone = async (
   const git: SimpleGit = simpleGit(gitOptions)
   try {
     clg(`项目下载自 ${pc.cyan(repo)}`)
-    await logger(git.clone(repo, projectName, options), '下载耗时: ', {
+    const gitCloneFunction = git.clone(repo, projectName, options)
+    await logger(gitCloneFunction, '下载耗时: ', {
       estimate: 7000
     })
   } catch (err) {
-    spinner.fail()
-    log.err('请求失败, 请重试')
+    log.err('请求超时, 请重新下载')
+    process.exit(1)
   }
 
   const welcomeMessage = gradientString('cyan', 'magenta').multiline(

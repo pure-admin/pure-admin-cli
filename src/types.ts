@@ -1,9 +1,14 @@
-export interface Ioptions {
-  force: string
+export interface cmdOptions {
+  '--': string[]
+  f: boolean
+  g: boolean
+  force: boolean
+  github: boolean
 }
 
 interface ITemplatesItem {
-  downloadUrl: string
+  giteeUrl: string
+  githubUrl: string
   description: string
   branch: string
 }

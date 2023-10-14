@@ -5,7 +5,7 @@ import { create } from './template'
 import { TTemplateName } from './types'
 import { hasTemplate, clg } from './utils'
 import { isExistsFile } from './create-dir'
-import { inputProjectName } from './prompt'
+import { inputProjectName, chooseDownloadOrigin } from './prompt'
 import { templates, version } from './constants'
 
 const cli = cac('pure')
@@ -14,21 +14,24 @@ cli.version(version)
 cli
   .command('create', '创建一个新项目') // 增加创建指令
   .option('-f, --force', '如果目标文件存在，则强制覆盖') // 强制覆盖
+  .option('-g, --github', '使用github模板地址') // 指定项目下载地址是从github下载
   .action(async (cmd) => {
     const projectName = await inputProjectName()
     const isExists = await isExistsFile(projectName, cmd)
     if (isExists) return
-    create(projectName)
+    const isDownloadForGithub = await chooseDownloadOrigin()
+    create(projectName, undefined, isDownloadForGithub)
   })
 
 cli
-  .command('init <template-name> <project-name>', '创建一个新项目') // 增加创建指令
-  .option('-f, --force', '如果目标文件存在，则强制覆盖') // 强制覆盖
+  .command('init <template-name> <project-name>', '创建一个新项目')
+  .option('-f, --force', '如果目标文件存在，则强制覆盖')
+  .option('-g, --github', '使用github模板地址')
   .action(async (templateName, projectName, cmd) => {
     if (!hasTemplate(templateName)) return
     const isExists = await isExistsFile(projectName, cmd)
     if (isExists) return
-    await create(projectName, templateName)
+    create(projectName, templateName)
   })
 
 cli.help(() => {
