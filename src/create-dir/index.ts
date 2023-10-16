@@ -33,7 +33,7 @@ export const isExistsFile = async (projectName: string, options: cmdOptions) => 
           await fs.remove(targetDirectory)
           spinner.succeed(`${pc.green('成功删除')} ${pc.gray(projectName)}`)
         } catch (error) {
-          spinner.fail('覆盖失败, 请重试')
+          spinner.fail(`${pc.red('覆盖失败, 请手动删除重名目录')}`)
           process.exit(1)
         }
         return false
