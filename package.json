@@ -8,7 +8,7 @@
   },
   "packageManager": "pnpm@7.33.6",
   "scripts": {
-    "dev": "pnpm build && pure init thin demo",
+    "dev": "pnpm build && pure init thin vue-pure-admin",
     "devc": "pnpm build && pure create",
     "build": "tsup",
     "typecheck": "tsc --noEmit",

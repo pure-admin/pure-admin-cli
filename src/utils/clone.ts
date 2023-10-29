@@ -19,10 +19,10 @@ const logger = createLogger({
 const gitOptions: Partial<SimpleGitOptions> = {
   baseDir: process.cwd(),
   binary: 'git',
-  maxConcurrentProcesses: 6,
-  timeout: {
-    block: 60000
-  }
+  maxConcurrentProcesses: 6
+  // timeout: {
+  //   block: 60000
+  // }
 }
 
 // https://git-scm.com/docs/git-clone#Documentation/git-clone.txt
@@ -40,7 +40,7 @@ export const clone = async (
       estimate: 7000
     })
   } catch (err) {
-    log.err('请求超时, 请重新下载')
+    log.err(err as string)
     process.exit(1)
   }
 
