@@ -1,9 +1,12 @@
 import boxen from 'boxen'
 import pc from 'picocolors'
 import semver from 'semver'
+import ora, { Ora } from 'ora'
 import { log, clg } from '../utils'
-import { REGISTER } from '../constants'
+import { name, REGISTER } from '../constants'
 import axios, { AxiosResponse } from 'axios'
+
+const spinner: Ora = ora()
 
 /**
  * 获取npm或taobao镜像对应的api
@@ -48,13 +51,18 @@ export const getNpmLatestVersion = async (npmName: string, register = getDefault
  * @param npmName 当前npm包名
  */
 export const checkNpmVersion = async (currentVersion: string, npmName: string) => {
-  const latestVersion = await getNpmLatestVersion(npmName)
-  if (semver.lt(latestVersion, currentVersion) || latestVersion === currentVersion) return
-  const dim = pc.dim
-  const magenta = pc.magenta
-  clg(
-    boxen(
-      `  😀 ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(latestVersion)}.
+  const pkgName = pc.cyan(name)
+  try {
+    spinner.start(`正在检查 ${pkgName} 是否需要更新中...`)
+    const latestVersion = await getNpmLatestVersion(npmName)
+    if (semver.lt(latestVersion, currentVersion) || latestVersion === currentVersion) {
+      spinner.succeed(`${pkgName} ${pc.gray('已是最新版本，无需更新')}`)
+    }
+    const dim = pc.dim
+    const magenta = pc.magenta
+    clg(
+      boxen(
+        `  😀 ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(latestVersion)}.
   💯 ${
     magenta('更新日志: ') +
     dim(`https://github.com/Ten-K/${npmName}/releases/tag/v${latestVersion}`)
@@ -63,10 +71,15 @@ export const checkNpmVersion = async (currentVersion: string, npmName: string) =
 
   💕 ${
     dim('关注') +
-    magenta(' pure-thin-cli') +
+    magenta(' pure-thin-cli ') +
     dim(`了解最新动态: https://github.com/Ten-K/${npmName}`)
   }`,
-      { padding: 1, margin: 1, borderColor: 'cyan', borderStyle: 'round' }
+        { padding: 1, margin: 1, borderColor: 'cyan', borderStyle: 'round' }
+      )
     )
-  )
+  } catch (error) {
+    spinner.fail(
+      `${pc.red(`检查`)} ${pkgName} ${pc.red(`更新失败, 但是不会影响下载项目的正常使用`)}`
+    )
+  }
 }
