@@ -7,6 +7,7 @@
     "node": ">=18.18.0",
     "pnpm": ">=8.9.2"
   },
+  "packageManager": "pnpm@8.9.2",
   "scripts": {
     "dev": "pnpm build && pure init thin vue-pure-admin",
     "devc": "pnpm build && pure create",
@@ -69,7 +70,7 @@
     "@typescript-eslint/parser": "^5.62.0",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.3",
-    "eslint": "^8.53.0",
+    "eslint": "^8.54.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.18.1",
     "husky": "^8.0.3",
