@@ -12,7 +12,7 @@ import simpleGit, { SimpleGit, SimpleGitOptions } from 'simple-git'
 const logger = createLogger({
   spinner: {
     interval: 140,
-    frames: ['🚶 ', '🏃 ']
+    frames: ['\ud83d\udeb6 ', '\ud83c\udfc3 ']
   }
 })
 
@@ -45,7 +45,7 @@ export const clone = async (
   }
 
   const welcomeMessage = gradientString('cyan', 'magenta').multiline(
-    'Hello! 欢迎使用PURE-ADMIN脚手架~ 🥰'
+    'Hello! 欢迎使用PURE-ADMIN脚手架~ '
   )
   const boxenOprions: boxenOptions = {
     padding: 1,
@@ -56,8 +56,8 @@ export const clone = async (
   clg(boxen(welcomeMessage, boxenOprions))
 
   // 模板使用提示
-  clg(`\r\n 🎉 已成功创建项目 ${pc.cyan(projectName)}`)
-  clg(` 👉 开始使用以下命令: \r\n`)
+  clg(`\r\n \ud83c\udf89 已成功创建项目 ${pc.cyan(projectName)}`)
+  clg(` \ud83d\udc49 开始使用以下命令: \r\n`)
   clg(` cd ${pc.cyan(projectName)}`)
   clg(' pnpm install \r\n')
   if (templateName === 'tauri') {

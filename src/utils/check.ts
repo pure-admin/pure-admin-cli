@@ -53,18 +53,20 @@ export const checkNpmVersion = async (currentVersion: string, npmName: string) =
   const dim = pc.dim
   const magenta = pc.magenta
   return boxen(
-    `  😀 ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(latestVersion)}.
-  💯 ${
-    magenta('更新日志: ') +
-    dim(`https://github.com/Ten-K/${npmName}/releases/tag/v${latestVersion}`)
-  }
-  👻 ${dim('运行') + magenta(` npm i -g ${npmName} `) + dim('可以更新哦.')}
+    `    \ud83d\ude00 ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(
+      latestVersion
+    )}.
+    \ud83d\udcaf ${
+      magenta('更新日志: ') +
+      dim(`https://github.com/Ten-K/${npmName}/releases/tag/v${latestVersion}`)
+    }
+    \ud83d\udc7b ${dim('运行') + magenta(` npm i -g ${npmName} `) + dim('可以更新哦.')}
 
-  💕 ${
-    dim('关注') +
-    magenta(' pure-thin-cli ') +
-    dim(`了解最新动态: https://github.com/Ten-K/${npmName}`)
-  }`,
+    \ud83d\udc95 ${
+      dim('关注') +
+      magenta(' pure-thin-cli ') +
+      dim(`了解最新动态: https://github.com/Ten-K/${npmName}`)
+    }`,
     { padding: 1, margin: 1, borderColor: 'cyan', borderStyle: 'round' }
   )
 }
