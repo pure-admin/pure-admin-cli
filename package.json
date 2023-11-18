@@ -1,12 +1,12 @@
 {
   "name": "pure-thin-cli",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "vue-pure-admin脚手架",
   "main": "bin/www.js",
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=18.18.0",
+    "pnpm": ">=8.9.2"
   },
-  "packageManager": "pnpm@8.9.2",
   "scripts": {
     "dev": "pnpm build && pure init thin vue-pure-admin",
     "devc": "pnpm build && pure create",
