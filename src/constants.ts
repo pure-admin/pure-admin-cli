@@ -1,3 +1,6 @@
+import { platform } from 'node:os'
+
+export const WIN_PLATFORM = platform() === 'win32'
 export const REGISTER = {
   npm: 'https://registry.npmjs.org/',
   taobao: 'https://registry.npmmirror.com/'

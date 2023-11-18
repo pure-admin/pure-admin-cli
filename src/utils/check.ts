@@ -3,7 +3,16 @@ import pc from 'picocolors'
 import semver from 'semver'
 import { log } from '../utils'
 import axios, { AxiosResponse } from 'axios'
-import { REGISTER } from '../constants'
+import { REGISTER, WIN_PLATFORM } from '../constants'
+
+/**
+ * 根据win平台判断是否显示emoji
+ * @param emoji emoji表情
+ * @returns
+ */
+export const isShowEmoji = (emoji: string) => {
+  return WIN_PLATFORM ? '' : emoji
+}
 
 /**
  * 获取npm或taobao镜像对应的api
@@ -53,16 +62,16 @@ export const checkNpmVersion = async (currentVersion: string, npmName: string) =
   const dim = pc.dim
   const magenta = pc.magenta
   return boxen(
-    `    \ud83d\ude00 ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(
+    `    ${isShowEmoji('😀')} ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(
       latestVersion
     )}.
-    \ud83d\udcaf ${
+    ${isShowEmoji('💯')} ${
       magenta('更新日志: ') +
       dim(`https://github.com/Ten-K/${npmName}/releases/tag/v${latestVersion}`)
     }
-    \ud83d\udc7b ${dim('运行') + magenta(` npm i -g ${npmName} `) + dim('可以更新哦.')}
+    ${isShowEmoji('👻')} ${dim('运行') + magenta(` npm i -g ${npmName} `) + dim('可以更新哦.')}
 
-    \ud83d\udc95 ${
+    ${isShowEmoji('💕')} ${
       dim('关注') +
       magenta(' pure-thin-cli ') +
       dim(`了解最新动态: https://github.com/Ten-K/${npmName}`)

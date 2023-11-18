@@ -49,7 +49,7 @@ export const isOverwriteDir = async () => {
       type: 'list', // list 类型
       message: '目标文件已存在, 请选择一个操作',
       choices: [
-        { name: '覆盖', value: true },
+        { name: '覆盖(会完全删除之前的同名项目)', value: true },
         { name: '取消', value: false }
       ]
     }
