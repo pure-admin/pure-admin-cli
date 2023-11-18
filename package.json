@@ -1,6 +1,6 @@
 {
   "name": "pure-thin-cli",
-  "version": "0.2.1-alpha.1",
+  "version": "0.2.1-alpha.2",
   "description": "vue-pure-admin脚手架",
   "main": "bin/www.js",
   "engines": {
