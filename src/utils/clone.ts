@@ -36,7 +36,7 @@ export const clone = async (
   projectName: string,
   options: string[],
   templateName: TTemplateName
-): Promise<any> => {
+): Promise<void> => {
   const git: SimpleGit = simpleGit(gitOptions)
   try {
     clg(`项目下载自 ${pc.cyan(repo)}`)
