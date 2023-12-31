@@ -3,8 +3,7 @@
   "version": "1.1.1",
   "packageManager": "pnpm@8.6.10",
   "description": "快速构建pure-admin相关项目的命令行工具",
-  "main": "bin/www.js",
-  "exports": "bin/www.js",
+  "main": "bin/www.mjs",
   "engines": {
     "node": ">=18.18.0",
     "pnpm": ">=8.6.10"
@@ -33,7 +32,7 @@
     "electron-pure-admin"
   ],
   "bin": {
-    "pure": "bin/www.js"
+    "pure": "bin/www.mjs"
   },
   "files": [
     "dist",
