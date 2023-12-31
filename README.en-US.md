@@ -22,11 +22,11 @@ English | [简体中文](./README.md)
 ## 📦 Install
 
 ```bash
-npm install @pureadmin/cli
+npm install -g @pureadmin/cli
 # or
-yarn add @pureadmin/cli
+yarn global add @pureadmin/cli
 # or
-pnpm add @pureadmin/cli
+pnpm add -g @pureadmin/cli
 ```
 
 ## ⚙️ Usage

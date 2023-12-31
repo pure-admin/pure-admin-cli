@@ -22,11 +22,11 @@
 ## 📦 安装
 
 ```bash
-npm install @pureadmin/cli
+npm install -g @pureadmin/cli
 # or
-yarn add @pureadmin/cli
+yarn global add @pureadmin/cli
 # or
-pnpm add @pureadmin/cli
+pnpm add -g @pureadmin/cli
 ```
 
 ## ⚙️ 用法
