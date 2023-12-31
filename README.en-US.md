@@ -19,7 +19,7 @@ English | [简体中文](./README.md)
 | `tauri`           | [vue-pure-admin tauri version](https://github.com/pure-admin/tauri-pure-admin)                                 |
 | `electron`        | [vue-pure-admin electron version](https://github.com/pure-admin/electron-pure-admin)                           |
 
-## 📦 Install
+## 📦 Global Install
 
 ```bash
 npm install -g @pureadmin/cli
@@ -27,6 +27,26 @@ npm install -g @pureadmin/cli
 yarn global add @pureadmin/cli
 # or
 pnpm add -g @pureadmin/cli
+```
+
+## 🚀 Global Upgrade
+
+```bash
+npm update -g @pureadmin/cli
+# or
+yarn global upgrade --latest @pureadmin/cli
+# or
+pnpm up --latest -g @pureadmin/cli
+```
+
+## ⛽ Global Uninstall
+
+```bash
+npm uninstall -g @pureadmin/cli
+# or
+yarn global remove @pureadmin/cli
+# or
+pnpm remove -g @pureadmin/cli
 ```
 
 ## ⚙️ Usage
@@ -50,6 +70,26 @@ npx @pureadmin/cli init thin myproject
 # or
 npx @pureadmin/cli create
 ```
+
+## 🔎 More Commands
+
+Check version, can also be used to check whether `@pureadmin/cli` was successfully installed
+
+```bash
+pure -v
+```
+
+Similar to the picture below, it means the installation is successful
+
+<img src="https://xiaoxian521.github.io/hyperlink/img/pureCliv.jpg" alt="pure-v" width="380" />
+
+More help information
+
+```bash
+pure -h
+```
+
+<img src="https://xiaoxian521.github.io/hyperlink/img/pureClih.jpg" alt="pure-h" width="380" />
 
 ## License
 
