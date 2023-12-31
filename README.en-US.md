@@ -7,17 +7,17 @@
 
 English | [简体中文](./README.md)
 
-<img src="https://xiaoxian521.github.io/hyperlink/gif/pure-admin-cli.gif" alt="pure-admin-cli" width="340" />
+<img src="https://xiaoxian521.github.io/hyperlink/gif/pure-admin-cli.gif" alt="pure-admin-cli" width="380" />
 
 ## 🏠 Template Type
 
-| **Template Type** | **Github Address**                                                                       |
-| :---------------: | :--------------------------------------------------------------------------------------- |
-|      `admin`      | [vue-pure-admin 完整版本](https://github.com/pure-admin/vue-pure-admin)                  |
-|      `thin`       | [vue-pure-admin 非国际化精简版本](https://github.com/pure-admin/pure-admin-thin)         |
-|      `i18n`       | [vue-pure-admin 国际化精简版本](https://github.com/pure-admin/pure-admin-thin/tree/i18n) |
-|      `tauri`      | [vue-pure-admin 的 tauri 版本](https://github.com/pure-admin/tauri-pure-admin)           |
-|    `electron`     | [vue-pure-admin 的 electron 版本](https://github.com/pure-admin/electron-pure-admin)     |
+| **Template Type** | **Github Address**                                                                                             |
+| :---------------- | :------------------------------------------------------------------------------------------------------------- |
+| `admin`           | [vue-pure-admin complete version](https://github.com/pure-admin/vue-pure-admin)                                |
+| `thin`            | [vue-pure-admin non-internationalized streamlined version](https://github.com/pure-admin/pure-admin-thin)      |
+| `i18n`            | [vue-pure-admin internationalized simplified version](https://github.com/pure-admin/pure-admin-thin/tree/i18n) |
+| `tauri`           | [vue-pure-admin tauri version](https://github.com/pure-admin/tauri-pure-admin)                                 |
+| `electron`        | [vue-pure-admin electron version](https://github.com/pure-admin/electron-pure-admin)                           |
 
 ## 📦 Install
 
