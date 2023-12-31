@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^18.4.3
     version: 18.4.3
   '@pureadmin/release':
-    specifier: ^1.0.0
-    version: 1.0.0
+    specifier: ^1.1.0
+    version: 1.1.0
   '@types/figlet':
     specifier: ^1.5.8
     version: 1.5.8
@@ -844,8 +844,8 @@ packages:
     dev: true
     optional: true
 
-  /@pureadmin/release@1.0.0:
-    resolution: {integrity: sha512-cFXev9X+TQNmpb8E8agD53ZfL5DCYpY25SPpLUXo42Twa62vmJckc+xqh95r4tvgMi0eqUEFRuiSHr1oS3pHmQ==}
+  /@pureadmin/release@1.1.0:
+    resolution: {integrity: sha512-eF/aUgwwzTcNZPpt8War+F9Dxk8Q/zT5mJvwxKsUdUxg4gqQUN4f8V3nvlygEGSASvFnevYYJVstLCV6CnymrA==}
     hasBin: true
     dev: true
 

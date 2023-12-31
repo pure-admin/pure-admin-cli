@@ -71,7 +71,7 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
-    "@pureadmin/release": "^1.0.0",
+    "@pureadmin/release": "^1.1.0",
     "@types/figlet": "^1.5.8",
     "@types/fs-extra": "^9.0.13",
     "@types/gradient-string": "^1.1.5",
