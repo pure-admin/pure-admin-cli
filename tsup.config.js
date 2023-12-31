@@ -11,7 +11,7 @@ export default defineConfig([
   {
     entry: ['src/index.ts'],
     treeshake: true,
-    format: ['cjs'],
+    format: ['esm'],
     ...config
   }
 ])
