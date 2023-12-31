@@ -49,7 +49,7 @@ export const clone = async (
   }
 
   const welcomeMessage = gradientString('cyan', 'magenta').multiline(
-    'Hello! 欢迎使用PURE-ADMIN脚手架~ '
+    'Hello! 欢迎使用 @pureadmin/cli'
   )
   const boxenOprions: boxenOptions = {
     padding: 1,
