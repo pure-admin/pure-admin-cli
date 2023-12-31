@@ -1,5 +1,5 @@
 {
-  "name": "pure-admin-cli",
+  "name": "@pureadmin/cli",
   "version": "0.0.0",
   "packageManager": "pnpm@8.6.10",
   "description": "快速构建pure-admin相关项目的命令行工具",
