@@ -66,7 +66,8 @@
     "picocolors": "^1.0.0",
     "progress-estimator": "^0.3.1",
     "semver": "^7.5.4",
-    "simple-git": "^3.20.0"
+    "simple-git": "^3.20.0",
+    "trash": "^8.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",

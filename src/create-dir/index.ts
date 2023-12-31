@@ -1,4 +1,5 @@
 import path from 'path'
+import trash from 'trash'
 import fs from 'fs-extra'
 import pc from 'picocolors'
 import { clg } from '../utils'
@@ -17,8 +18,8 @@ export const isExistsFile = async (projectName: string, options: cmdOptions) => 
   if (fs.existsSync(targetDirectory)) {
     // 判断是否使用 --force 参数
     if (options.force) {
-      // 删除重名目录(remove是个异步方法)
-      await fs.remove(targetDirectory)
+      // 将之前的同名项目移到本地回收站中
+      await trash([targetDirectory])
       return false
     } else {
       const isOverwrite = await isOverwriteDir()
@@ -30,7 +31,7 @@ export const isExistsFile = async (projectName: string, options: cmdOptions) => 
         // 选择 Overwirte ，先删除掉原有重名目录
         try {
           spinner.start('删除中...')
-          await fs.remove(targetDirectory)
+          await trash([targetDirectory])
           spinner.succeed(`${pc.green('成功删除')} ${pc.gray(projectName)}`)
         } catch (error) {
           spinner.fail(`${pc.red('覆盖失败, 请手动删除重名目录')}`)
