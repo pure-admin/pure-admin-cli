@@ -2,7 +2,7 @@ import boxen from 'boxen'
 import pc from 'picocolors'
 import semver from 'semver'
 import { log } from '../utils'
-import axios, { AxiosResponse } from 'axios'
+import axios, { type AxiosResponse } from 'axios'
 import { REGISTER, WIN_PLATFORM } from '../constants'
 
 /**
@@ -35,7 +35,8 @@ export const getNpmInfo = async (npmName: string, register = getDefaultRegister(
   try {
     res = await axios.get(npmUrl)
   } catch (err) {
-    log.err(err as string)
+    log.warning(`未发现${npmName}包，请检查是否发布到${register}`)
+    process.exit(1)
   }
   return res
 }
@@ -62,19 +63,12 @@ export const checkNpmVersion = async (currentVersion: string, npmName: string) =
   const dim = pc.dim
   const magenta = pc.magenta
   return boxen(
-    `    ${isShowEmoji('😀')} ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(
+    `${isShowEmoji('🎉')} ${pc.yellow('哇~有更新!')} ${pc.red(currentVersion)} → ${pc.green(
       latestVersion
-    )}.
-    ${isShowEmoji('💯')} ${
-      magenta('更新日志: ') +
-      dim(`https://github.com/Ten-K/${npmName}/releases/tag/v${latestVersion}`)
-    }
-    ${isShowEmoji('👻')} ${dim('运行') + magenta(` npm i -g ${npmName} `) + dim('可以更新哦.')}
-
-    ${isShowEmoji('💕')} ${
-      dim('关注') +
-      magenta(' pure-thin-cli ') +
-      dim(`了解最新动态: https://github.com/Ten-K/${npmName}`)
+    )}\n${isShowEmoji('📄')} ${
+      magenta('更新日志: ') + dim(`https://github.com/pure-admin/${npmName}/releases`)
+    }\n${isShowEmoji('🚀')} ${
+      dim('运行') + magenta(` npm i -g ${npmName}@latest `) + dim('升级到最新版脚手架')
     }`,
     { padding: 1, margin: 1, borderColor: 'cyan', borderStyle: 'round' }
   )

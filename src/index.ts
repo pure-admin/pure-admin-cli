@@ -2,11 +2,11 @@ import { cac } from 'cac'
 import pc from 'picocolors'
 import figlet from 'figlet'
 import { create } from './template'
-import { TTemplateName } from './types'
 import { hasTemplate, clg } from './utils'
 import { isExistsFile } from './create-dir'
-import { inputProjectName, chooseDownloadOrigin } from './prompt'
+import { type TTemplateName } from './types'
 import { templates, version } from './constants'
+import { inputProjectName, chooseDownloadOrigin } from './prompt'
 
 const cli = cac('pure')
 cli.version(version)

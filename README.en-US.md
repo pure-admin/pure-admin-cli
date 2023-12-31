@@ -1,46 +1,56 @@
-# pure-thin-cli
+<h1 align="center">@pureadmin/cli</h1>
+<p align="center">Quickly build cli for pure-admin related projects</p>
 
-![Npm Version](https://img.shields.io/npm/v/pure-thin-cli)
-![GitHub License](https://img.shields.io/github/license/Ten-K/pure-thin-cli)
-![OSCS Status](https://www.oscs1024.com/platform/badge/Ten-K/pure-thin-cli.svg?size=small)
+<p align="center">
+<a href="https://www.npmjs.com/package/@pureadmin/cli" target="__blank"><img src="https://img.shields.io/npm/v/@pureadmin/cli?color=a1b858&label=" alt="NPM version"></a>
+</p>
 
-**English** | [中文](./README.md)
+English | [简体中文](./README.md)
 
-- Used to quickly build an command line tool based on the `vue-pure-admin` project
-  ![pure-cli.gif](https://i.imgtg.com/2023/03/31/212UC.gif)
+<img src="https://xiaoxian521.github.io/hyperlink/gif/pure-admin-cli.gif" alt="pure-admin-cli" width="340" />
 
-## 🏠 Template
+## 🏠 Template Type
 
-- `thin`（[pure-admin-thin](https://github.com/xiaoxian521/pure-admin-thin)）
-- `i18n`（[pure-admin-thin internationalization](https://github.com/xiaoxian521/pure-admin-thin/tree/i18n)）
-- `tauri`（[tauri-pure-admin](https://github.com/xiaoxian521/tauri-pure-admin)）
-- `electron`（[electron-pure-admin](https://gitee.com/yiming_chang/electron-pure-admin)）
-- `admin`（[vue-pure-admin](https://github.com/xiaoxian521/vue-pure-admin)）
+| **Template Type** | **Github Address**                                                                       |
+| :---------------: | :--------------------------------------------------------------------------------------- |
+|      `admin`      | [vue-pure-admin 完整版本](https://github.com/pure-admin/vue-pure-admin)                  |
+|      `thin`       | [vue-pure-admin 非国际化精简版本](https://github.com/pure-admin/pure-admin-thin)         |
+|      `i18n`       | [vue-pure-admin 国际化精简版本](https://github.com/pure-admin/pure-admin-thin/tree/i18n) |
+|      `tauri`      | [vue-pure-admin 的 tauri 版本](https://github.com/pure-admin/tauri-pure-admin)           |
+|    `electron`     | [vue-pure-admin 的 electron 版本](https://github.com/pure-admin/electron-pure-admin)     |
 
 ## 📦 Install
 
 ```bash
-  npm i pure-thin-cli -g
+npm install @pureadmin/cli
+# or
+yarn add @pureadmin/cli
+# or
+pnpm add @pureadmin/cli
 ```
 
-## 🚗 Usage
+## ⚙️ Usage
 
-- pure init `template` `project-name`
+pure init `template type` `project name`
 
 ```bash
-  pure init thin myproject
+pure init thin myproject
 ```
 
-- Or, you want to create a project through interactive selection template：
+Interactively select templates and create projects
 
 ```bash
-  pure create
+pure create
 ```
 
-- If you don't want to install `pure-thin-cli` locally, you can use the following command
+Of course, you can also choose to create a project without installing `@pureadmin/cli`
 
 ```bash
-  npx pure-thin-cli create
-  # 或者
-  npx pure-thin-cli init thin myproject
+npx @pureadmin/cli init thin myproject
+# or
+npx @pureadmin/cli create
 ```
+
+## License
+
+[MIT © 2022-present, pure-admin](./LICENSE)

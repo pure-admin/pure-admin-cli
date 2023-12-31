@@ -1,12 +1,12 @@
 import pc from 'picocolors'
 import { log, clg } from './log'
 import { isShowEmoji } from './check'
-import { TTemplateName } from '../types'
 import gradientString from 'gradient-string'
 import createLogger from 'progress-estimator'
+import { type TTemplateName } from '../types'
 import { templates, WIN_PLATFORM } from '../constants'
 import boxen, { Options as boxenOptions } from 'boxen'
-import simpleGit, { SimpleGit, SimpleGitOptions } from 'simple-git'
+import simpleGit, { type SimpleGit, type SimpleGitOptions } from 'simple-git'
 
 // https://github.com/bvaughn/progress-estimator
 // https://github.com/sindresorhus/cli-spinners/blob/main/spinners.json
@@ -34,8 +34,7 @@ const gitOptions: Partial<SimpleGitOptions> = {
 export const clone = async (
   repo: string,
   projectName: string,
-  options: string[],
-  templateName: TTemplateName
+  options: string[]
 ): Promise<void> => {
   const git: SimpleGit = simpleGit(gitOptions)
   try {
@@ -61,14 +60,11 @@ export const clone = async (
   clg(boxen(welcomeMessage, boxenOprions))
 
   // 模板使用提示
-  clg(`\r\n ${isShowEmoji('🎉')} 已成功创建项目 ${pc.cyan(projectName)}`)
-  clg(` ${isShowEmoji('👉')} 开始使用以下命令: \r\n`)
+  clg(` ${isShowEmoji('🎉')} 已成功创建项目 ${pc.cyan(projectName)}`)
+  clg(` ${isShowEmoji('⬇')}  运行下面命令将它跑起来\n`)
   clg(` cd ${pc.cyan(projectName)}`)
-  clg(' pnpm install \r\n')
-  if (templateName === 'tauri') {
-    return clg(' pnpm tauri:dev \r\n')
-  }
-  clg(' pnpm dev \r\n')
+  clg(' pnpm install')
+  clg(' pnpm dev')
 }
 
 /**

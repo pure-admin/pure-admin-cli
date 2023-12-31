@@ -1,10 +1,10 @@
 import path from 'path'
 import fs from 'fs-extra'
 import pc from 'picocolors'
-import ora, { Ora } from 'ora'
-import { cmdOptions } from '../types'
-import { isOverwriteDir } from '../prompt'
 import { clg } from '../utils'
+import ora, { type Ora } from 'ora'
+import { type cmdOptions } from '../types'
+import { isOverwriteDir } from '../prompt'
 
 const spinner: Ora = ora()
 

@@ -62,7 +62,7 @@ export const chooseDownloadOrigin = async () => {
     {
       name: 'chooseDownloadOrigin',
       type: 'list',
-      message: '你想从哪个仓库下载本项目（推荐Gitee）',
+      message: '选择一个代码托管平台下载模板',
       choices: [
         { name: 'Gitee', value: false },
         { name: 'Github', value: true }

@@ -1,7 +1,7 @@
-import { TTemplateName } from '../types'
 import { chooseTemplate } from '../prompt'
+import { type TTemplateName } from '../types'
+import { templates, version } from '../constants'
 import { clone, checkNpmVersion, clg } from '../utils'
-import { templates, version, name as npmName } from '../constants'
 
 export const create = async (
   projectName: string,
@@ -14,8 +14,8 @@ export const create = async (
 
     // 并行执行 - 下载模板和检查脚手架版本
     Promise.all([
-      clone(downloadUrl, projectName, ['-b', `${branch}`], name),
-      checkNpmVersion(version, npmName)
+      clone(downloadUrl, projectName, ['-b', `${branch}`]),
+      checkNpmVersion(version, '@pureadmin/cli')
     ]).then((res) => {
       res[1] && clg(res[1])
     })
