@@ -19,7 +19,7 @@
     "lint:pretty": "pretty-quick --staged",
     "lint": "pnpm lint:eslint && pnpm lint:prettier",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pub": "pub lib",
+    "pub": "pub",
     "prepare": "husky install"
   },
   "keywords": [
