@@ -2,9 +2,9 @@ import { cac } from 'cac'
 import pc from 'picocolors'
 import figlet from 'figlet'
 import { create } from './template'
-import { hasTemplate, clg } from './utils'
 import { isExistsFile } from './create-dir'
 import { type TTemplateName } from './types'
+import { hasTemplate, clg, log } from './utils'
 import { templates, version } from './constants'
 import { inputProjectName, chooseDownloadOrigin } from './prompt'
 
@@ -52,6 +52,12 @@ cli.command('list', '查看所有模板类型').action(() => {
   Object.keys(templates).forEach((key: string) => {
     clg(`${key} ${templates[key as TTemplateName].description}`)
   })
+})
+
+cli.on('command:*', () => {
+  log.err(`无效的命令: ${cli.args.join(' ')}`)
+  cli.outputHelp()
+  process.exit(1)
 })
 
 cli.parse()
