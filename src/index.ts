@@ -4,9 +4,9 @@ import figlet from 'figlet'
 import { create } from './template'
 import { isExistsFile } from './create-dir'
 import { type TTemplateName } from './types'
-import { hasTemplate, clg, log } from './utils'
 import { templates, version } from './constants'
 import { inputProjectName, chooseDownloadOrigin } from './prompt'
+import { hasTemplate, clg, log, checkPureOptions } from './utils'
 
 const cli = cac('pure')
 cli.version(version)
@@ -59,5 +59,7 @@ cli.on('command:*', () => {
   cli.outputHelp()
   process.exit(1)
 })
+
+checkPureOptions(cli)
 
 cli.parse()

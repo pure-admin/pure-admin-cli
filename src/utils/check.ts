@@ -1,6 +1,7 @@
 import boxen from 'boxen'
 import pc from 'picocolors'
 import semver from 'semver'
+import { type CAC } from 'cac'
 import { log } from '../utils'
 import axios, { type AxiosResponse } from 'axios'
 import { REGISTER, WIN_PLATFORM } from '../constants'
@@ -72,4 +73,24 @@ export const checkNpmVersion = async (currentVersion: string, npmName: string) =
     }`,
     { padding: 1, margin: 1, borderColor: 'cyan', borderStyle: 'round' }
   )
+}
+
+/**
+ * 检查执行命令是否存在无效的选项
+ * @param cli
+ */
+export function checkPureOptions(cli: CAC) {
+  /** 过滤出执行命令的所有选项 */
+  const argvOptions = process.argv.filter((argv) => argv.includes('-'))
+
+  /** 有效的选项 */
+  const availableOptions = ['-f', '-h', '-v', '-h', '--force', '--github', '--version', '--help']
+
+  /** 无效的选项 */
+  const invalidOptions = argvOptions.find((argv) => !availableOptions.includes(argv))
+
+  if (!invalidOptions) return
+  log.err(`无效的选项: ${invalidOptions}`)
+  cli.outputHelp()
+  process.exit(1)
 }
