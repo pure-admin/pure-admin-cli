@@ -81,7 +81,7 @@ export const checkNpmVersion = async (currentVersion: string, npmName: string) =
  */
 export function checkPureOptions(cli: CAC) {
   /** 过滤出执行命令的所有选项 */
-  const argvOptions = process.argv.filter((argv) => argv.includes('-'))
+  const argvOptions = process.argv.filter((argv) => argv.startsWith('-'))
 
   /** 有效的选项 */
   const availableOptions = ['-f', '-h', '-v', '-h', '--force', '--github', '--version', '--help']
