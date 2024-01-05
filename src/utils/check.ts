@@ -84,7 +84,7 @@ export function checkPureOptions(cli: CAC) {
   const argvOptions = process.argv.filter((argv) => argv.startsWith('-'))
 
   /** 有效的选项 */
-  const availableOptions = ['-f', '-h', '-v', '-h', '--force', '--github', '--version', '--help']
+  const availableOptions = ['-f', '-g', '-v', '-h', '--force', '--github', '--version', '--help']
 
   /** 无效的选项 */
   const invalidOptions = argvOptions.find((argv) => !availableOptions.includes(argv))
