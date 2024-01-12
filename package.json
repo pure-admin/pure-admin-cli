@@ -1,6 +1,6 @@
 {
   "name": "@pureadmin/cli",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "packageManager": "pnpm@8.6.10",
   "description": "快速构建pure-admin相关项目的命令行工具",
   "main": "bin/www.mjs",
