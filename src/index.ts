@@ -3,9 +3,9 @@ import pc from 'picocolors'
 import figlet from 'figlet'
 import { create } from './template'
 import { isExistsFile } from './create-dir'
+import { inputProjectName } from './prompt'
 import { type TTemplateName } from './types'
 import { templates, version } from './constants'
-import { inputProjectName, chooseDownloadOrigin } from './prompt'
 import { hasTemplate, clg, log, checkPureOptions } from './utils'
 
 const cli = cac('pure')
@@ -19,8 +19,7 @@ cli
     const projectName = await inputProjectName()
     const isExists = await isExistsFile(projectName, cmd)
     if (isExists) return
-    const isDownloadForGithub = await chooseDownloadOrigin()
-    create(projectName, undefined, isDownloadForGithub)
+    create(projectName, undefined)
   })
 
 cli

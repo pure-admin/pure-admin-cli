@@ -3,18 +3,13 @@ import { type TTemplateName } from '../types'
 import { clone, checkNpmVersion, clg } from '../utils'
 import { templates, version, name as npmName } from '../constants'
 
-export const create = async (
-  projectName: string,
-  templateName?: TTemplateName,
-  isDownloadForGithub = false
-) => {
+export const create = async (projectName: string, templateName?: TTemplateName) => {
   const run = async (name: TTemplateName) => {
-    const { giteeUrl, githubUrl, branch } = templates[name]
-    const downloadUrl = isDownloadForGithub ? githubUrl : giteeUrl
+    const { githubUrl, branch } = templates[name]
 
     // 并行执行 - 下载模板和检查脚手架版本
     Promise.all([
-      clone(downloadUrl, projectName, ['-b', `${branch}`]),
+      clone(githubUrl, projectName, ['-b', `${branch}`]),
       checkNpmVersion(version, npmName)
     ]).then((res) => {
       res[1] && clg(res[1])

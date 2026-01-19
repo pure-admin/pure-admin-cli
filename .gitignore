@@ -2,7 +2,7 @@ node_modules
 .DS_Store
 dist
 dist-ssr
-vue-pure-admin
+pure-admin
 
 .local
 # local env files

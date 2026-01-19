@@ -9,7 +9,7 @@
     "pnpm": ">=8.6.10"
   },
   "scripts": {
-    "dev": "esno src/index.ts init thin vue-pure-admin",
+    "dev": "esno src/index.ts init thin pure-admin",
     "devc": "esno src/index.ts create",
     "build": "tsup",
     "typecheck": "tsc --noEmit",

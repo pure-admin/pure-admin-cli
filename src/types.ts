@@ -7,7 +7,6 @@ export interface cmdOptions {
 }
 
 interface ITemplatesItem {
-  giteeUrl: string
   githubUrl: string
   description: string
   branch: string
